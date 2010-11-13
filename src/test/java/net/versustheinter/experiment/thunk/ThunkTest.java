@@ -13,8 +13,8 @@ import org.junit.Test;
 
 public class ThunkTest {
     
-    private ThunkComputer computer;
-    private Thunkable concreteThunk;
+    protected Computable computer;
+    protected Thunkable concreteThunk;
     
     @Before
     public void setUp() {
@@ -27,7 +27,7 @@ public class ThunkTest {
     }
     
     public void mockOutComputer() {
-        computer = mock(ThunkComputer.class);
+        computer = mock(Computable.class);
     }
     
     @Test
