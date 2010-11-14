@@ -9,9 +9,9 @@ import net.versustheinter.experiment.thunk.Thunkable;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ThunkTest {
+public class ConditionalThunkTest {
     
-    public Computable computer;
+    public Computable computable;
     public Thunkable thunk;
     
     @Before
@@ -21,18 +21,18 @@ public class ThunkTest {
     }
     
     public void initializeThunk() {
-        thunk = new Thunk(computer);
+        thunk = new ConditionalThunk(computable);
     }
     
     public void mockOutComputer() {
-        computer = mock(Computable.class);
+        computable = mock(Computable.class);
     }
     
     @Test
     public void computesWhenReceivingGet() {        
         thunk.get();
         
-        verify(computer).compute();
+        verify(computable).compute();
     }
     
     @Test
@@ -40,6 +40,6 @@ public class ThunkTest {
         thunk.get();
         thunk.get();
         
-        verify(computer, times(1)).compute();
+        verify(computable, times(1)).compute();
     } 
 }
