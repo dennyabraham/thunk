@@ -1,16 +1,18 @@
-package net.versustheinter.experiment.thunk;
+package net.versustheinter.experiment.thunk.conditional;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import net.versustheinter.experiment.thunk.conditional.Thunk;
+import net.versustheinter.experiment.thunk.Computable;
+import net.versustheinter.experiment.thunk.Thunkable;
+
 import org.junit.Before;
 import org.junit.Test;
 
-public class ConditionalThunkTest {
+public class ThunkTest {
     
-    protected Computable computer;
-    protected Thunkable thunk;
+    public Computable computer;
+    public Thunkable thunk;
     
     @Before
     public void setUp() {
