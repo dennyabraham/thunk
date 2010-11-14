@@ -15,7 +15,7 @@ public class ConditionalThunkTest {
     
     @Before
     public void setUp() {
-        initializeComputer();
+        initializeComputable();
         initializeThunk();
     }
     
@@ -23,7 +23,7 @@ public class ConditionalThunkTest {
         thunk = new ConditionalThunk(computable);
     }
     
-    public void initializeComputer() {
+    public void initializeComputable() {
         computable = mock(Computable.class);
     }
     
