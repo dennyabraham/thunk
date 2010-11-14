@@ -40,5 +40,5 @@ public class ConditionalThunkTest {
         thunk.get();
         
         verify(computable, times(1)).compute();
-    } 
+    }
 }
