@@ -1,20 +1,16 @@
 package net.versustheinter.experiment.thunk;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
 import net.versustheinter.experiment.thunk.conditional.Thunk;
-
 import org.junit.Before;
 import org.junit.Test;
 
-public class ThunkTest {
+public class ConditionalThunkTest {
     
     protected Computable computer;
-    protected Thunkable concreteThunk;
+    protected Thunkable thunk;
     
     @Before
     public void setUp() {
@@ -23,7 +19,7 @@ public class ThunkTest {
     }
     
     public void initializeThunk() {
-        concreteThunk = new Thunk(computer);
+        thunk = new Thunk(computer);
     }
     
     public void mockOutComputer() {
@@ -32,15 +28,15 @@ public class ThunkTest {
     
     @Test
     public void computesWhenReceivingGet() {        
-        concreteThunk.get();
+        thunk.get();
         
         verify(computer).compute();
     }
     
     @Test
     public void doesNotComputeWhenReceivingSubsequentGets() {        
-        concreteThunk.get();
-        concreteThunk.get();
+        thunk.get();
+        thunk.get();
         
         verify(computer, times(1)).compute();
     } 
