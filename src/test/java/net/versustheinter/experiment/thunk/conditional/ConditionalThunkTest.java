@@ -10,13 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ConditionalThunkTest {
-    
     public Computable computable;
     public Thunkable thunk;
     
     @Before
     public void setUp() {
-        mockOutComputer();
+        initializeComputer();
         initializeThunk();
     }
     
@@ -24,7 +23,7 @@ public class ConditionalThunkTest {
         thunk = new ConditionalThunk(computable);
     }
     
-    public void mockOutComputer() {
+    public void initializeComputer() {
         computable = mock(Computable.class);
     }
     
