@@ -6,7 +6,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import net.versustheinter.experiment.thunk.conditional.ConcreteThunk;
+import net.versustheinter.experiment.thunk.conditional.Thunk;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class ThunkTest {
     }
     
     public void initializeThunk() {
-        concreteThunk = new ConcreteThunk(computer);
+        concreteThunk = new Thunk(computer);
     }
     
     public void mockOutComputer() {
